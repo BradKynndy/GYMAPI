@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GymApi.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240627012534_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20240627031653_Initialcreate")]
+    partial class Initialcreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
