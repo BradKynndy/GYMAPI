@@ -1,0 +1,69 @@
+@Model IEnumrable<GYMAPI.Models.MembersViewmodel>
+
+@{ViewBag.Title ="Members";}
+<h2>Relação de Members</h2>
+<p>
+    @Html.ActionLink("Criar novo Member", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.Id)</th>
+        <th>@Html.DisplayNameFor(model => model.Nome)</th>
+        <th>@Html.DisplayNameFor(model => model.Email)</th>
+        <th>@Html.DisplayNameFor(model => model.Nivelconta)</th>
+    using System.Net.Http.Headers;
+#line default
+</tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.Id)</td>
+            <td>@Html.DisplayFor(modelItem => item.Nome)</td>
+            <td>@Html.DisplayFor(modelItem => item.Email)</td>
+            <td>@Html.DisplayFor(modelItem => item.Nivelconta)</td>
+            <td>
+                @Html.ActionLink("Editar", "Edit" NEW { id = item.Id }) |
+                @Html.ActionLink("Detalhes", "Detalhes" NEW { id = item.i=Id }) |
+                @Html.ActionLink("Deletar", "Delete" NEW { id = item.Id }) 
+            </td>
+        </tr>
+    
+    [HttpPost]
+    public async Task<ActionResult> CreateAsync(MembersViewModel p)
+        {
+            try
+            {
+                HttpClient httpClient = new HttpClient();
+                string token = HttpContext.Session.GetString("SessionTokenUsuario");
+                httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                var content = new StringContent(JasonConvert.SerializeObject(p));
+                content.Headers.ContentType = new MedialTypeHeaderValues("application/jason");
+                HttpResponseMessage response = await httpClient.PostAsync(uriBase,content);
+                string serialized = await response.Content.ReadAsByteArrayAsync();
+
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    TempData["Mensagem"] = string.Format("Member {0}, Id{1} salvo com sucesso!", p.Nome, serialized);
+                    return RedirectToAction("Index");
+                }
+                else
+                    throw new System.Exeption(serialized);
+            }
+            catch (System.Exception ex)
+            {
+                TempData["MensagemErro"] = ex.Message;
+                return RedirectToAction("Create");
+            }
+        }
+    
+    [HttpGet]
+    public ActionResult Create()
+    {
+        return View();
+    }
+    }
+</table>
+<!--PASSO 8 SLIDE 15.1 FAZER
+Depois apartir dp passo 11 slide 15.1 
+começar daqui depois do passo 8 >
