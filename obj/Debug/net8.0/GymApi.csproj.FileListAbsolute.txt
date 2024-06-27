@@ -135,3 +135,4 @@ D:\2DS -EVB\GymApi\obj\Debug\net8.0\refint\GymApi.dll
 D:\2DS -EVB\GymApi\obj\Debug\net8.0\GymApi.pdb
 D:\2DS -EVB\GymApi\obj\Debug\net8.0\GymApi.genruntimeconfig.cache
 D:\2DS -EVB\GymApi\obj\Debug\net8.0\ref\GymApi.dll
+D:\2DS -EVB\GymApi\obj\Debug\net8.0\GymApi.sourcelink.json
