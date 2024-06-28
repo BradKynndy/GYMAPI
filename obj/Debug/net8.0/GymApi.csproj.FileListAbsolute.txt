@@ -274,5 +274,3 @@ C:\Users\bkynn\GYMAPI\obj\Debug\net8.0\refint\GymApi.dll
 C:\Users\bkynn\GYMAPI\obj\Debug\net8.0\GymApi.pdb
 C:\Users\bkynn\GYMAPI\obj\Debug\net8.0\GymApi.genruntimeconfig.cache
 C:\Users\bkynn\GYMAPI\obj\Debug\net8.0\ref\GymApi.dll
-C:\Users\bkynn\GYMAPI\obj\Debug\net8.0\GymApi.RazorAssemblyInfo.cache
-C:\Users\bkynn\GYMAPI\obj\Debug\net8.0\GymApi.RazorAssemblyInfo.cs
