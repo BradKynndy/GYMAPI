@@ -3,11 +3,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<DataContext>(Options =>
 {
-    Options.UseSqlServer(builder.Configuration.GetConnectionString("DB-DS-BRAD.mssql.somee.com"));
+    Options.UseSqlServer(builder.Configuration.GetConnectionString("ConexaoLocal"));
 });
 
 builder.Services.AddEndpointsApiExplorer();
